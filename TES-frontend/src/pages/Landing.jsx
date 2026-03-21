@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Background from "../components/Shared/Background";
 import TextType from "../components/TextType";
+import Footer from "../components/Footer";
 
 import Tilt from "react-parallax-tilt";
 import { heroCards, heroCounts } from "../../constants";
@@ -75,6 +76,10 @@ export default function Landing() {
 </div>
 
 
+      </div>
+      
+      <div className="mt-20">
+          <Footer />
       </div>
 
     </>

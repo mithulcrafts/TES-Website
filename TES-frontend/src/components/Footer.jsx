@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 // ── Inline styles for things Tailwind can't do ──────────────────────────────
 const styles = `
@@ -100,21 +100,6 @@ const styles = `
     transform: translateY(0);
   }
 
-  .input-glow:focus {
-    outline: none;
-    border-color: rgba(74,144,226,0.6) !important;
-    box-shadow: 0 0 0 2px rgba(74,144,226,0.1);
-  }
-
-  .join-btn {
-    transition: background 0.2s, box-shadow 0.2s;
-  }
-
-  .join-btn:hover {
-    background: #5a9ff0;
-    box-shadow: 0 0 16px rgba(74,144,226,0.4);
-  }
-
   .badge-glow {
     animation: badgePulse 4s ease-in-out infinite;
   }
@@ -122,10 +107,6 @@ const styles = `
   @keyframes badgePulse {
     0%, 100% { box-shadow: 0 0 0 0 rgba(74,144,226,0); }
     50% { box-shadow: 0 0 12px 2px rgba(74,144,226,0.2); }
-  }
-
-  .grid-line {
-    background: rgba(255,255,255,0.03);
   }
 `;
 
@@ -166,7 +147,13 @@ const socials = [
   { label: "Medium", icon: <MediumIcon />, href: "https://medium.com/@tes.abviiitm" },
 ];
 
-const navLinks = ["Home", "About Us", "Articles", "Events", "Projects"];
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Articles", href: "/articles" },
+  { label: "Events", href: "/events" },
+  { label: "Projects", href: "/projects" },
+];
 
 // ── Intersection observer hook ───────────────────────────────────────────────
 function useFadeUp(delay = 0) {
@@ -176,7 +163,9 @@ function useFadeUp(delay = 0) {
     if (!el) return;
     const timer = setTimeout(() => {
       const obs = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) { el.classList.add("visible"); obs.disconnect(); } },
+        ([entry]) => {
+          if (entry.isIntersecting) { el.classList.add("visible"); obs.disconnect(); }
+        },
         { threshold: 0.1 }
       );
       obs.observe(el);
@@ -199,18 +188,11 @@ function ColHeader({ children }) {
 
 // ── Main footer component ────────────────────────────────────────────────────
 export default function EnigmaFooter() {
-  const [email, setEmail] = useState("");
-  const [joined, setJoined] = useState(false);
-
   const col1Ref = useFadeUp(100);
   const col2Ref = useFadeUp(200);
   const col3Ref = useFadeUp(300);
   const col4Ref = useFadeUp(400);
   const bottomRef = useFadeUp(500);
-
-  const handleJoin = () => {
-    if (email.trim()) { setJoined(true); setTimeout(() => setJoined(false), 3000); setEmail(""); }
-  };
 
   return (
     <>
@@ -244,7 +226,8 @@ export default function EnigmaFooter() {
         />
 
         {/* Subtle grid lines */}
-        <div className="absolute inset-0 pointer-events-none"
+        <div
+          className="absolute inset-0 pointer-events-none"
           style={{
             backgroundImage: "linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px)",
             backgroundSize: "80px 80px",
@@ -254,15 +237,17 @@ export default function EnigmaFooter() {
         <div className="relative z-10 max-w-6xl mx-auto px-8 pt-16 pb-8">
 
           {/* ── Grid ── */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1fr_1.3fr] gap-12 pb-12 border-b border-white/[0.06]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1fr_1.2fr] gap-12 pb-12 border-b border-white/[0.06]">
 
             {/* Brand */}
             <div ref={col1Ref} className="fade-up">
-              <div className="mb-5">
-                <p className="mono text-[9px] tracking-[5px] text-white/40 uppercase mb-1">THE</p>
-                <p className="font-black text-[28px] tracking-[4px] uppercase leading-none text-white">ENIGMA</p>
-                <p className="mono text-[9px] tracking-[7px] text-white/30 uppercase mt-1">SOCIETY</p>
-              </div>
+              {/* ⚠️ Make sure your logo file is at /public/logo.png
+                  Change "logo.png" below to match your actual filename */}
+              <img
+                src="/teslogo-nobg-text-white.png"
+                alt="The Enigma Society"
+                className="mb-6 w-40 opacity-90"
+              />
 
               <p className="text-sm leading-7 text-white/45 mb-7 max-w-[270px]">
                 A community of curious minds building, learning, and pushing the boundaries of technology — together.
@@ -281,14 +266,14 @@ export default function EnigmaFooter() {
             <div ref={col2Ref} className="fade-up">
               <ColHeader>Navigate</ColHeader>
               <ul className="space-y-3">
-                {navLinks.map((link) => (
-                  <li key={link}>
+                {navLinks.map(({ label, href }) => (
+                  <li key={label}>
                     <a
-                      href="#"
+                      href={href}
                       className="nav-link flex items-center gap-3 text-sm font-medium text-white/50"
                     >
                       <span className="mono text-[10px] text-[rgba(74,144,226,0.45)]">—</span>
-                      {link}
+                      {label}
                     </a>
                   </li>
                 ))}
@@ -303,6 +288,8 @@ export default function EnigmaFooter() {
                   <a
                     key={label}
                     href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="social-row flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-white/50 no-underline"
                     style={{ background: "rgba(255,255,255,0.02)" }}
                   >
@@ -321,62 +308,24 @@ export default function EnigmaFooter() {
             {/* Contact */}
             <div ref={col4Ref} className="fade-up">
               <ColHeader>Contact</ColHeader>
-              <div className="space-y-4 mb-5">
+              <div className="space-y-5">
                 <div>
-                  <p className="mono text-[9px] tracking-[2px] uppercase mb-1" style={{ color: "rgba(74,144,226,0.6)" }}>Email</p>
+                  <p className="mono text-[9px] tracking-[2px] uppercase mb-1.5" style={{ color: "rgba(74,144,226,0.6)" }}>Email</p>
                   <a
-                    href="mailto:enigma@iiitm.ac.in"
+                    href="mailto:tes.abviiitm@gmail.com"
                     className="text-[13px] font-medium text-white/55 no-underline transition-colors hover:text-[#4a90e2]"
                   >
                     tes.abviiitm@gmail.com
                   </a>
                 </div>
                 <div>
-                  <p className="mono text-[9px] tracking-[2px] uppercase mb-1" style={{ color: "rgba(74,144,226,0.6)" }}>Campus</p>
+                  <p className="mono text-[9px] tracking-[2px] uppercase mb-1.5" style={{ color: "rgba(74,144,226,0.6)" }}>Campus</p>
                   <p className="text-[13px] font-medium text-white/55">ABV-IIITM, Gwalior, M.P.</p>
                 </div>
-              </div>
 
-              {/* Newsletter */}
-              <div
-                className="rounded-xl p-4"
-                style={{ background: "rgba(74,144,226,0.05)", border: "1px solid rgba(74,144,226,0.15)" }}
-              >
-                <p className="text-xs text-white/40 leading-relaxed mb-3">
-                  Stay updated with events, articles & hackathons.
-                </p>
-                {joined ? (
-                  <div className="text-center py-2">
-                    <span className="mono text-[11px] tracking-widest" style={{ color: "#4a90e2" }}>
-                      ✓ YOU'RE IN!
-                    </span>
-                  </div>
-                ) : (
-                  <div className="flex">
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      onKeyDown={(e) => e.key === "Enter" && handleJoin()}
-                      placeholder="your@email.com"
-                      className="input-glow flex-1 text-xs text-white px-3 py-2 rounded-l-md border-r-0 font-[inherit] placeholder-white/25"
-                      style={{
-                        background: "rgba(0,0,0,0.4)",
-                        border: "1px solid rgba(74,144,226,0.2)",
-                        borderRight: "none",
-                      }}
-                    />
-                    <button
-                      onClick={handleJoin}
-                      className="join-btn mono text-[10px] tracking-widest text-white px-4 py-2 rounded-r-md border-0"
-                      style={{ background: "#4a90e2" }}
-                    >
-                      JOIN
-                    </button>
-                  </div>
-                )}
               </div>
             </div>
+
           </div>
 
           {/* ── Bottom bar ── */}

@@ -42,26 +42,17 @@ const Announcements = () => {
         {/* Glowing Background Effect */}
         <div className="absolute -top-24 -left-24 w-48 h-48 bg-[var(--color-sapphire)] opacity-5 blur-[80px] group-hover:opacity-15 transition-opacity duration-500" />
 
-        {/* Animated Icon */}
-        <div className="mb-6 relative">
-          <div className="absolute inset-0 bg-[var(--color-sapphire)] opacity-20 blur-xl rounded-full animate-pulse" />
-          <div className="relative w-16 h-16 flex items-center justify-center rounded-full bg-[color:rgba(255,255,255,0.05)] border border-[color:rgba(255,255,255,0.1)] transition-transform duration-500 group-hover:scale-110">
-            <Hourglass className="w-8 h-8 text-[var(--color-sapphire)] animate-[spin_4s_linear_infinite]" />
-          </div>
-        </div>
+        
+        
 
         {/* Text Content */}
         <h3 className="text-2xl font-semibold text-[var(--color-text-main)] mb-2 group-hover:text-[var(--color-sapphire)] transition-colors duration-300">
-          Transmission Intercepted...
+          Coming Soon
         </h3>
-        <p className="text-[var(--color-text-muted)] max-w-md leading-relaxed">
-          The Enigma Society is preparing its next major update. Stay tuned for hackathons, workshops, and recruitment drives.
-        </p>
+        
 
-        {/* The "Coming Soon" Badge */}
-        <div className="mt-8 px-4 py-1 rounded-full text-xs font-mono uppercase tracking-[0.2em] border border-[var(--color-sapphire)]/40 text-[var(--color-sapphire)] bg-[var(--color-sapphire)]/5 group-hover:bg-[var(--color-sapphire)]/10 transition-all duration-300">
-          Incoming Signal: 2026_EST
-        </div>
+        
+        
 
         {/* Decorative scan line animation */}
         <div className="absolute inset-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color-sapphire)]/20 to-transparent -translate-y-full group-hover:animate-[scan_2s_linear_infinite]" />

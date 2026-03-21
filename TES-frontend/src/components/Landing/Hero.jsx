@@ -86,45 +86,23 @@ const Hero = () => {
         />
       </div>
 
-      {/* Feature Cards */}
-      <div className="mt-14 w-full max-w-6xl">
-        <div className="flex flex-col sm:flex-row gap-8 items-center justify-center">
-          {heroCards.map((item, index) => {
-            const Icon = item.icon;
-
-            return (
-              <Tilt
-                key={index}
-                tiltMaxAngleX={4}
-                tiltMaxAngleY={4}
-                scale={1.01}
-                className="rounded-2xl flex justify-center"
-              >
-                <div className="group p-6 rounded-2xl border border-[color:rgba(255,255,255,0.08)] bg-[color:rgba(255,255,255,0.03)] backdrop-blur-2xl flex flex-col items-center text-center w-[28vw] h-30 max-w-sm min-h-[210px] transition duration-300 hover:border-[var(--color-sapphire)]/40 hover:bg-[color:rgba(255,255,255,0.06)] hover:shadow-[0_0_30px_rgba(116,199,236,0.15)] ">
-                  
-                  {/* Icon */}
-                  <div className="mb-4 w-12 h-12 flex items-center justify-center rounded-xl bg-[color:rgba(255,255,255,0.05)] border border-[color:rgba(255,255,255,0.08)] group-hover:scale-110 transition">
-                    <Icon className="w-6 h-6 text-[var(--color-sapphire)]" />
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-xl md:text-2xl font-semibold text-[var(--color-text-main)] mb-3">
-                    {item.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-[var(--color-text-muted)] text-sm leading-relaxed hidden sm:block">
-                    {item.desc}
-                  </p>
-
-                </div>
-              </Tilt>
-            );
-          })}
-        </div>
+      <div>
+        <div className="max-w-4xl px-6 text-center my-20">
+        <p className="text-[var(--color-text-main)] text-sm  leading-relaxed font-light">
+          TES is the official tech hub of <span className="text-[var(--color-flamingo)] font-semibold">ABV-IIITM</span> for 
+          discussions, guidance, peer learning, projects, and building a strong culture across all domains. 
+          Learn from seniors, avoid common mistakes, explore career paths, collaborate on real projects, 
+          and grow faster with the right community. Contribute by sharing knowledge, solving doubts, 
+          posting resources, or creating content — get recognized and featured on TES platforms. 
+          Transparent, no bias, no pressure — TES is built to help you learn better, build stronger, and reach higher.
+        </p>
+      </div>
       </div>
       
-    </div>
+       
+      </div>
+      
+    
   )
 }
 

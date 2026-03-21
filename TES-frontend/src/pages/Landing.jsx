@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Hero from "../components/Landing/Hero";
 import Core from "../components/Landing/Core";
 import Announcements from "../components/Landing/Announcements";
+import Team from "../components/Landing/Team";
 
 
 
@@ -25,6 +26,8 @@ export default function Landing() {
         </div>
 
         <Announcements />
+
+        <Team />
 
         
 

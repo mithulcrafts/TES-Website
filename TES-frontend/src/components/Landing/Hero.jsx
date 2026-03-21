@@ -87,66 +87,18 @@ const Hero = () => {
       </div>
 
       <div>
-        
+        <div className="max-w-4xl px-6 text-center my-20">
+        <p className="text-[var(--color-text-main)] text-sm  leading-relaxed font-light">
+          TES is the official tech hub of <span className="text-[var(--color-flamingo)] font-semibold">ABV-IIITM</span> for 
+          discussions, guidance, peer learning, projects, and building a strong culture across all domains. 
+          Learn from seniors, avoid common mistakes, explore career paths, collaborate on real projects, 
+          and grow faster with the right community. Contribute by sharing knowledge, solving doubts, 
+          posting resources, or creating content — get recognized and featured on TES platforms. 
+          Transparent, no bias, no pressure — TES is built to help you learn better, build stronger, and reach higher.
+        </p>
       </div>
-      {/* Club Description - High Visibility & ABV-IIITM Branded */}
-      <div className="max-w-6xl px-6 text-center mt-6">
-        <div className="relative p-[1px] rounded-2xl bg-gradient-to-b from-[var(--color-sapphire)]/40 to-transparent">
-          {/* Using var(--color-surface) for the background as per your CSS */}
-          <div className="bg-[var(--color-surface)]/90 backdrop-blur-2xl p-8 rounded-2xl border border-white/5 shadow-2xl space-y-8">
-            
-            {/* Header with Flamingo accent for the College name */}
-            <h2 className="text-[var(--color-text-main)] text-xl md:text-2xl font-semibold tracking-tight leading-snug">
-              TES is the official tech hub of <span className="text-[var(--color-flamingo)] font-bold">ABV-IIITM</span>, 
-              fostering a culture of <span style={{ color: logoColors[colorIndex], transition: 'color 0.7s' }}>innovation and peer learning</span>.
-            </h2>
-
-            {/* Feature Grid with Lavender and Teal accents */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-sm md:text-base leading-relaxed">
-              
-              <div className="text-left border-l-2 border-[var(--color-sapphire)] pl-6">
-                <span className="block text-[var(--color-lavender)] font-bold mb-2 uppercase tracking-widest text-xs">
-                  Accelerate Growth
-                </span>
-                <p className="text-[var(--color-text-main)] leading-relaxed">
-                  Learn from seniors, avoid common mistakes, and 
-                  <span className="text-white font-semibold ml-1 underline decoration-[var(--color-sapphire)]/30 underline-offset-4">
-                    collaborate on real-world projects
-                  </span> 
-                  with the ABV-IIITM community.
-                </p>
-              </div>
-              
-              <div className="text-left border-l-2 border-[var(--color-teal)] pl-6">
-                <span className="block text-[var(--color-teal)] font-bold mb-2 uppercase tracking-widest text-xs">
-                  Contribute & Get Featured
-                </span>
-                <p className="text-[var(--color-text-main)] leading-relaxed">
-                  Share knowledge, solve doubts, or create content. Get 
-                  <span className="text-white font-semibold ml-1 underline decoration-[var(--color-teal)]/30 underline-offset-4">
-                    recognized and featured
-                  </span> 
-                  across our college platforms.
-                </p>
-              </div>
-
-            </div>
-
-            {/* Bottom Mantra with animated color cycle */}
-            <div className="pt-4 flex items-center justify-center gap-6">
-              <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-[var(--color-text-muted)]/30" />
-              <p 
-                className="text-[10px] md:text-xs uppercase tracking-[0.5em] font-black transition-colors duration-700 whitespace-nowrap"
-                style={{ color: logoColors[colorIndex] }}
-              >
-                Transparent • Unbiased • Community First
-              </p>
-              <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-[var(--color-text-muted)]/30" />
-            </div>
-            
-          </div>
-        </div>
       </div>
+      
        
       </div>
       

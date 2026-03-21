@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Landing from "./pages/Landing";
+import Articles from "./pages/Articles";
+import About from "./pages/About";
 
 export default function App() {
   return (
@@ -11,17 +13,9 @@ export default function App() {
           
           <Route path="/" element={<Landing />} />
           
-          <Route path="/about" element={
-            <div className="flex items-center justify-center min-h-[60vh] text-lavender font-bold text-2xl">
-              About Page Initiated...
-            </div>
-          } />
+          <Route path="/about" element={<About />} />
           
-          <Route path="/articles" element={
-            <div className="flex items-center justify-center min-h-[60vh] text-lavender font-bold text-2xl">
-              Articles Fetching...
-            </div>
-          } />
+          <Route path="/articles" element={<Articles />} />
           
         </Route>
       </Routes>

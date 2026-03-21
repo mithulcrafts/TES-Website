@@ -2,59 +2,98 @@ import React from 'react';
 
 const teamData = {
   coordinators: [
-    { name: "Mithul Nama", role: "Overall Lead", domain: "Full Stack" },
-    { name: "Rohinth S", role: "Operations Lead", domain: "DevOps" },
-    { name: "Aman Dabral", role: "Operations Lead", domain: "DevOps" },
+    { name: "Placeholder Lead 1", linkedin: "#", image: "" },
+    { name: "Placeholder Lead 2", linkedin: "#", image: "" },
+    { name: "Placeholder Lead 3", linkedin: "#", image: "" },
   ],
   team: [
-    { name: "Member Name", role: "Web Lead" },
-    { name: "Member Name", role: "App Lead" },
-    { name: "Member Name", role: "Design Lead" },
-    { name: "Member Name", role: "CP Lead" },
+    { name: "Mithul Nama", linkedin: "https://www.linkedin.com/in/mithul-nama-61362a331", image: "/team/mithul.jpg" },
+    { name: "Rohinth S", linkedin: "https://www.linkedin.com/in/srohinth/", image: "/team/rohinth.jpg" },
+    { name: "Aman Dabral", linkedin: "https://www.linkedin.com/in/aman-dabral-163730323/", image: "" },
   ]
 };
 
 const Team = () => {
   return (
-    <section className="py-20 px-6 max-w-6xl mx-auto space-y-16">
+    <section className="py-12 px-6 max-w-6xl mx-auto space-y-12">
       
       {/* Section Header */}
       <div className="text-center space-y-2">
         <h2 className="text-[var(--color-text-main)] text-3xl md:text-4xl font-bold tracking-tight">
           The <span className="text-[var(--color-sapphire)]">Team</span>
         </h2>
-        <p className="text-[var(--color-text-muted)] text-sm md:text-base font-light">
-          Driving the tech culture at ABV-IIITM
-        </p>
       </div>
 
-      {/* Lead Coordinators Section */}
-      <div className="space-y-8">
-        <h3 className="text-[var(--color-lavender)] text-xs uppercase tracking-[0.3em] font-bold text-center">
-          Lead Coordinators
+      {/* Core Team Section */}
+      <div className="space-y-6">
+        <h3 className="text-[var(--color-teal)] text-2xl md:text-3xl font-bold tracking-tight text-center">
+          Core Members
         </h3>
-        <div className="flex flex-col sm:flex-row gap-5">
-          {teamData.coordinators.map((lead, index) => (
-            <div key={index} className="bg-[var(--color-surface)] border border-white/5 p-8 rounded-2xl hover:border-[var(--color-sapphire)]/50 transition-all group">
-              <p className="text-[var(--color-text-main)] text-xl font-semibold">{lead.name}</p>
-              <p className="text-[var(--color-sapphire)] text-sm font-medium uppercase tracking-wider mt-1">{lead.role}</p>
-              <p className="text-[var(--color-text-muted)] text-xs mt-4 font-mono">{lead.domain}</p>
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {teamData.team?.map((member, index) => (
+            <a 
+              key={index}
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              /* ADDED items-center and removed block */
+              className="group bg-[var(--color-surface)] border border-white/5 p-6 rounded-2xl hover:border-[var(--color-teal)]/50 transition-all flex flex-col items-center cursor-pointer"
+            >
+              <div className="w-20 h-20 bg-white/5 mb-6 flex items-center justify-center overflow-hidden relative rounded-full border border-white/5 group-hover:border-[var(--color-teal)]/30 transition-colors">
+                {member.image ? (
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                ) : (
+                  <span className="text-[var(--color-text-muted)] font-black text-xl group-hover:text-[var(--color-teal)] transition-colors">
+                    {member.name.charAt(0)}
+                  </span>
+                )}
+              </div>
+              
+              <p className="text-[var(--color-text-main)] text-xl font-semibold transition-colors group-hover:text-[var(--color-teal)] text-center">{member.name}</p>
+              
+              <div className="mt-auto pt-5 border-t border-white/5 w-full">
+                <span className="text-sm font-bold text-[var(--color-text-muted)] group-hover:text-[var(--color-teal)] transition-colors flex items-center justify-center gap-2">
+                  View Profile <span>→</span>
+                </span>
+              </div>
+            </a>
           ))}
         </div>
       </div>
 
-      {/* Core Team Section */}
-      <div className="space-y-8 pt-10">
-        <h3 className="text-[var(--color-teal)] text-xs uppercase tracking-[0.3em] font-bold text-center">
-          Core Members
+      {/* Lead Coordinators Section */}
+      <div className="space-y-6 pt-6">
+        <h3 className="text-[var(--color-lavender)] text-2xl md:text-3xl font-bold tracking-tight text-center">
+          Coordinators
         </h3>
-        <div className="flex flex-col sm:flex-row gap-4">
-          {teamData.team.map((member, index) => (
-            <div key={index} className="bg-[var(--color-surface)]/50 border border-white/5 p-5 rounded-xl text-center hover:bg-[var(--color-surface)] transition-colors">
-              <p className="text-[var(--color-text-main)] font-medium">{member.name}</p>
-              <p className="text-[var(--color-text-muted)] text-[10px] uppercase tracking-widest mt-1">{member.role}</p>
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {teamData.coordinators?.map((lead, index) => (
+            <a 
+              key={index} 
+              href={lead.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              /* ADDED items-center and removed block */
+              className="group bg-[var(--color-surface)] border border-white/5 p-6 rounded-2xl hover:border-[var(--color-sapphire)]/50 transition-all flex flex-col items-center cursor-pointer"
+            >
+              <div className="w-28 h-28 shrink-0 bg-white/5 mb-6 flex items-center justify-center overflow-hidden relative rounded-full border border-white/5 group-hover:border-[var(--color-sapphire)]/30 transition-colors">
+                {lead.image ? (
+                  <img src={lead.image} alt={lead.name} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                ) : (
+                  <span className="text-[var(--color-text-muted)] font-black text-5xl group-hover:text-[var(--color-lavender)] transition-colors">
+                    {lead.name.charAt(0)}
+                  </span>
+                )}
+              </div>
+              
+              <p className="text-[var(--color-text-main)] text-xl font-semibold transition-colors group-hover:text-[var(--color-sapphire)] text-center">{lead.name}</p>
+              
+              <div className="mt-auto pt-5 border-t border-white/5 w-full">
+                <span className="text-sm font-bold text-[var(--color-text-muted)] group-hover:text-[var(--color-lavender)] transition-colors flex items-center justify-center gap-2">
+                  View Profile <span>→</span>
+                </span>
+              </div>
+            </a>
           ))}
         </div>
       </div>

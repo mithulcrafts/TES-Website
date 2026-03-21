@@ -1,6 +1,6 @@
 import Background from "../components/Shared/Background";
 import TextType from "../components/TextType";
-import Footer from "../components/Footer";
+import Footer from "../components/Shared/Footer";
 
 import Hero from "../components/Landing/Hero";
 import Core from "../components/Landing/Core";
@@ -21,7 +21,7 @@ export default function Landing() {
         <Hero />
 
         {/* About Section */}
-        <div className="mt-20 w-full max-w-6xl">
+        <div className="mt-10 w-full max-w-6xl">
           <Core />
         </div>
 
@@ -34,9 +34,7 @@ export default function Landing() {
       </div>
       </div>
       
-      <div className="mt-20">
-          <Footer />
-      </div>
+
 
     </>
   );

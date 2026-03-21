@@ -72,18 +72,18 @@ export const heroCards = [
 
 export const aboutData = [
   {
-    title: "Who are we?",
+    title: "No Bias",
     
-    desc: "The Enigma Society (TES) is the premier technical wing of ABV-IIITM Gwalior. We are a collective of developers, designers, and problem-solvers dedicated to unraveling the complexities of modern technology. From code-breaking to system-building, we are the heart of the institute's developer culture.",
+    desc: "We promote a strictly meritocratic environment. Your skils are judged over your background.",
   },
   {
-    title: "Our Mission",
+    title: "Radical Transparency",
    
-    desc: "To decode the barriers between students and high-level engineering. We strive to empower the IIITM community through peer-to-peer mentorship, open-source contribution, and hands-on workshops that turn abstract logic into real-world innovation.",
+    desc: "Our decisions are planned with complete transparency. No backroom discussions.",
   },
   {
-    title: "Our Vision",
+    title: "Open Feedback",
    
-    desc: "To establish ABV-IIITM Gwalior as a global epicenter for technical excellence. We envision a future where every member of TES is equipped to solve 'Enigma-level' challenges, pushing the boundaries of what's possible in the digital landscape.",
+    desc: "Suggestions are always welcome. We believe in open discussions and criticism is appreciated.",
   },
 ];

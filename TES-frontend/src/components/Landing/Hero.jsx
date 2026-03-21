@@ -25,7 +25,7 @@ const Hero = () => {
       // Change color every 800ms to match the 700ms CSS transition smoothly
       intervalId = setInterval(() => {
         setColorIndex((prevIndex) => (prevIndex + 1) % logoColors.length);
-      }, 400);
+      }, 1000);
     }
 
     // Cleanup function: stops the timer when you unhover or if the component unmounts
@@ -71,7 +71,7 @@ const Hero = () => {
       </div>
 
       {/* Typing Text */}
-      <div className="text-2xl md:text-3xl my-6 text-[var(--color-text-muted)]">
+      <div className="text-2xl md:text-3xl my-12 text-[var(--color-text-muted)]">
         <TextType 
           text={["A place where CODERS", "learn and collaborate"]}
           typingSpeed={75}
@@ -87,14 +87,17 @@ const Hero = () => {
       </div>
 
       <div>
+        <h2 className="text-[var(--color-text-main)] text-3xl md:text-4xl font-bold tracking-tight">
+          About <span className="text-[var(--color-sapphire)]">The Enigma Society</span>
+        </h2>
         <div className="max-w-4xl px-6 text-center my-20">
-        <p className="text-[var(--color-text-main)] text-sm  leading-relaxed font-light">
-          TES is the official tech hub of <span className="text-[var(--color-flamingo)] font-semibold">ABV-IIITM</span> for 
+        <p className="text-[var(--color-text-main)] text-[16] leading-relaxed font-light">
+          TES is the official tech hub of <span className="text-[var(--color-flamingo)] font-semibold">ABV-IIITM Gwalior</span> for 
           discussions, guidance, peer learning, projects, and building a strong culture across all domains. 
           Learn from seniors, avoid common mistakes, explore career paths, collaborate on real projects, 
           and grow faster with the right community. Contribute by sharing knowledge, solving doubts, 
-          posting resources, or creating content — get recognized and featured on TES platforms. 
-          Transparent, no bias, no pressure — TES is built to help you learn better, build stronger, and reach higher.
+          posting resources, or creating content, get recognized and featured on TES platforms. 
+          Transparent, no bias, no pressure, TES is built to help you learn better, build stronger, and reach higher.
         </p>
       </div>
       </div>

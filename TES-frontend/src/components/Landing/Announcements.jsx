@@ -18,7 +18,7 @@ const Announcements = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="w-full max-w-4xl mx-auto px-6 py-12 overflow-hidden">
+    <div ref={sectionRef} className="w-full max-w-4xl mx-auto px-6 py-6 overflow-hidden">
       
       {/* Section Header */}
       <div 

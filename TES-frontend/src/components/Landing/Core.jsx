@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { aboutData } from "../../../constants";
 import Tilt from "react-parallax-tilt";
-import { Users, Target, Rocket } from "lucide-react";
+import { Scale, Eye, MessageCircleCode } from "lucide-react";
 
 const Core = () => {
-  const icons = [Users, Target, Rocket];
+  const icons = [Scale, Eye, MessageCircleCode];
   const accentColors = [
     "var(--color-sapphire)",
     "var(--color-lavender)",
@@ -29,7 +29,7 @@ const Core = () => {
     <div ref={sectionRef} className="w-full pb-20 overflow-hidden">
       {/* Section Heading with Letter Spacing Animation */}
       <h2 className={`text-3xl md:text-4xl font-bold text-center mb-16 text-[var(--color-text-main)] transition-all duration-1000 ${isVisible ? 'tracking-tight opacity-100' : 'tracking-[0.5em] opacity-0'}`}>
-        Decoding <span className="text-[var(--color-sapphire)]">Our Core</span>
+        Our <span className="text-[var(--color-sapphire)]">Principles</span>
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

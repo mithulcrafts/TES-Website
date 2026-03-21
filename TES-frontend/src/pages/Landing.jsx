@@ -3,7 +3,7 @@ import Background from "../components/Shared/Background";
 import Hero from "../components/Landing/Hero";
 import Core from "../components/Landing/Core";
 import Announcements from "../components/Landing/Announcements";
-import Info from "../components/Landing/Info";
+
 
 
 export default function Landing() {
@@ -24,7 +24,7 @@ export default function Landing() {
 
         <Announcements />
 
-        <Info />
+        
 
       </div>
       </div>

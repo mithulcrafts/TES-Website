@@ -86,45 +86,71 @@ const Hero = () => {
         />
       </div>
 
-      {/* Feature Cards */}
-      <div className="mt-14 w-full max-w-6xl">
-        <div className="flex flex-col sm:flex-row gap-8 items-center justify-center">
-          {heroCards.map((item, index) => {
-            const Icon = item.icon;
+      <div>
+        
+      </div>
+      {/* Club Description - High Visibility & ABV-IIITM Branded */}
+      <div className="max-w-6xl px-6 text-center mt-6">
+        <div className="relative p-[1px] rounded-2xl bg-gradient-to-b from-[var(--color-sapphire)]/40 to-transparent">
+          {/* Using var(--color-surface) for the background as per your CSS */}
+          <div className="bg-[var(--color-surface)]/90 backdrop-blur-2xl p-8 rounded-2xl border border-white/5 shadow-2xl space-y-8">
+            
+            {/* Header with Flamingo accent for the College name */}
+            <h2 className="text-[var(--color-text-main)] text-xl md:text-2xl font-semibold tracking-tight leading-snug">
+              TES is the official tech hub of <span className="text-[var(--color-flamingo)] font-bold">ABV-IIITM</span>, 
+              fostering a culture of <span style={{ color: logoColors[colorIndex], transition: 'color 0.7s' }}>innovation and peer learning</span>.
+            </h2>
 
-            return (
-              <Tilt
-                key={index}
-                tiltMaxAngleX={4}
-                tiltMaxAngleY={4}
-                scale={1.01}
-                className="rounded-2xl flex justify-center"
+            {/* Feature Grid with Lavender and Teal accents */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-sm md:text-base leading-relaxed">
+              
+              <div className="text-left border-l-2 border-[var(--color-sapphire)] pl-6">
+                <span className="block text-[var(--color-lavender)] font-bold mb-2 uppercase tracking-widest text-xs">
+                  Accelerate Growth
+                </span>
+                <p className="text-[var(--color-text-main)] leading-relaxed">
+                  Learn from seniors, avoid common mistakes, and 
+                  <span className="text-white font-semibold ml-1 underline decoration-[var(--color-sapphire)]/30 underline-offset-4">
+                    collaborate on real-world projects
+                  </span> 
+                  with the ABV-IIITM community.
+                </p>
+              </div>
+              
+              <div className="text-left border-l-2 border-[var(--color-teal)] pl-6">
+                <span className="block text-[var(--color-teal)] font-bold mb-2 uppercase tracking-widest text-xs">
+                  Contribute & Get Featured
+                </span>
+                <p className="text-[var(--color-text-main)] leading-relaxed">
+                  Share knowledge, solve doubts, or create content. Get 
+                  <span className="text-white font-semibold ml-1 underline decoration-[var(--color-teal)]/30 underline-offset-4">
+                    recognized and featured
+                  </span> 
+                  across our college platforms.
+                </p>
+              </div>
+
+            </div>
+
+            {/* Bottom Mantra with animated color cycle */}
+            <div className="pt-4 flex items-center justify-center gap-6">
+              <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-[var(--color-text-muted)]/30" />
+              <p 
+                className="text-[10px] md:text-xs uppercase tracking-[0.5em] font-black transition-colors duration-700 whitespace-nowrap"
+                style={{ color: logoColors[colorIndex] }}
               >
-                <div className="group p-6 rounded-2xl border border-[color:rgba(255,255,255,0.08)] bg-[color:rgba(255,255,255,0.03)] backdrop-blur-2xl flex flex-col items-center text-center w-[28vw] h-30 max-w-sm min-h-[210px] transition duration-300 hover:border-[var(--color-sapphire)]/40 hover:bg-[color:rgba(255,255,255,0.06)] hover:shadow-[0_0_30px_rgba(116,199,236,0.15)] ">
-                  
-                  {/* Icon */}
-                  <div className="mb-4 w-12 h-12 flex items-center justify-center rounded-xl bg-[color:rgba(255,255,255,0.05)] border border-[color:rgba(255,255,255,0.08)] group-hover:scale-110 transition">
-                    <Icon className="w-6 h-6 text-[var(--color-sapphire)]" />
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-xl md:text-2xl font-semibold text-[var(--color-text-main)] mb-3">
-                    {item.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-[var(--color-text-muted)] text-sm leading-relaxed hidden sm:block">
-                    {item.desc}
-                  </p>
-
-                </div>
-              </Tilt>
-            );
-          })}
+                Transparent • Unbiased • Community First
+              </p>
+              <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-[var(--color-text-muted)]/30" />
+            </div>
+            
+          </div>
         </div>
       </div>
+       
+      </div>
       
-    </div>
+    
   )
 }
 

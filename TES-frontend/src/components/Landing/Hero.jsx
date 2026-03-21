@@ -90,7 +90,7 @@ const Hero = () => {
         <h2 className="text-[var(--color-text-main)] text-3xl md:text-4xl font-bold tracking-tight">
           About <span className="text-[var(--color-sapphire)]">The Enigma Society</span>
         </h2>
-        <div className="max-w-4xl px-6 text-center my-20">
+        <div className="max-w-4xl px-6 text-center my-10">
         <p className="text-[var(--color-text-main)] text-[16] leading-relaxed font-light">
           TES is the official tech hub of <span className="text-[var(--color-flamingo)] font-semibold">ABV-IIITM Gwalior</span> for 
           discussions, guidance, peer learning, projects, and building a strong culture across all domains. 

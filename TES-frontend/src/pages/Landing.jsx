@@ -1,11 +1,11 @@
 import Background from "../components/Shared/Background";
-import TextType from "../components/TextType";
-import Footer from "../components/Shared/Footer";
+
 
 import Hero from "../components/Landing/Hero";
-import Core from "../components/Landing/Core";
+
 import Announcements from "../components/Landing/Announcements";
-import Team from "../components/Landing/Team";
+import BentoGrid from "../components/Landing/BentoGrid";
+
 
 
 
@@ -20,14 +20,10 @@ export default function Landing() {
         {/* Heading */}
         <Hero />
 
-        {/* About Section */}
-        <div className="mt-10 w-full max-w-6xl">
-          <Core />
-        </div>
-
+        
         <Announcements />
 
-        <Team />
+       {/* <BentoGrid /> */}
 
         
 

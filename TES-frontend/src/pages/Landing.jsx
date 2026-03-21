@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Background from "../components/Shared/Background";
 import TextType from "../components/TextType";
-import { Code, Trophy, Mic } from "lucide-react";
+
 import Tilt from "react-parallax-tilt";
 import { heroCards, heroCounts } from "../../constants";
 export default function Landing() {
@@ -73,6 +73,7 @@ export default function Landing() {
 })}
   </div>
 </div>
+
 
       </div>
 

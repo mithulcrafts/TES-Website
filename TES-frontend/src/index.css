@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  /* Soft Dark Backgrounds */
+  --color-base: #0B090A;
+  --color-surface: #161A1D;
+  
+  /* Aesthetic, Eye-Friendly Accents */
+  --color-lavender: #B4BEFE;
+  --color-sapphire: #74C7EC;
+  --color-teal: #94E2D5;
+  --color-flamingo: #F2CDCD;
+  
+  /* Text Colors */
+  --color-text-main: #CDD6F4;
+  --color-text-muted: #A6ADC8;
+
+  /* Heavy but simple font stack */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-text-main);
+  /* Optional: makes the heavy fonts look much sharper */
+  -webkit-font-smoothing: antialiased; 
+}

@@ -1,11 +1,56 @@
-import { Code, Trophy, Mic } from "lucide-react";
+import { Code, Trophy, Mic, Users, Target, Rocket , 
+  Eye, 
+  GitBranch, 
+  Share2, 
+  Linkedin, 
+  Award,
+  ChevronRight } from "lucide-react";
 
 export const heroCounts = [
-  { value: "1700+", label: "SOC 2025 Participation" },
+  
   { value: "110+", label: "Wiki Articles" },
   { value: "90+", label: "GitHub Repos" },
-  { value: "18+", label: "Years since formation" },
+  { value: "2+", label: "Years since formation" },
 ];
+
+export const contributions = [
+    { 
+      label: "Share Knowledge", 
+      desc: "Answer peer doubts, share opportunities, or offer technical opinions.",
+      icon: Share2 
+    },
+    { 
+      label: "Build Presence", 
+      desc: "High-quality member content is featured on official platforms like LinkedIn and X.",
+      icon: Linkedin 
+    },
+    { 
+      label: "No Roles Required", 
+      desc: "Meaningful contribution is valued over specific positions or official club titles.",
+      icon: Award 
+    }
+  ];
+
+export const pillars = [
+    {
+      title: "Radical Transparency",
+      icon: Eye,
+      color: "var(--color-sapphire)",
+      desc: "The club operates without bias, driven entirely by member interest and direct feedback. No hidden agendas—just pure tech."
+    },
+    {
+      title: "Peer-to-Peer Growth",
+      icon: Users,
+      color: "var(--color-lavender)",
+      desc: "Second-year mentors share real experiences while first-years learn through active participation. Learn from seniors, avoid common mistakes."
+    },
+    {
+      title: "Open Source Vision",
+      icon: GitBranch,
+      color: "var(--color-teal)",
+      desc: "Establishing a centralized organization where members collaborate on listed technical projects across all domains."
+    }
+  ];
 
 export const heroCards = [
   {
@@ -28,14 +73,17 @@ export const heroCards = [
 export const aboutData = [
   {
     title: "Who are we?",
-    desc: "The Web and Coding Club, one of the biggest clubs at IIT Bombay and part of the Institute Technical Council, provides a gateway for students to join the coding community. We offer mentorship and a platform to help students enhance their coding skills, ensuring everyone has the opportunity to learn and develop a passion for coding. The secret to getting ahead is getting started, and we’re here to give every student the right start.",
+    
+    desc: "The Enigma Society (TES) is the premier technical wing of ABV-IIITM Gwalior. We are a collective of developers, designers, and problem-solvers dedicated to unraveling the complexities of modern technology. From code-breaking to system-building, we are the heart of the institute's developer culture.",
   },
   {
     title: "Our Mission",
-    desc: "We aim to foster a culture of learning and innovation by empowering students with the skills to excel in web development, competitive coding, open-source contributions, and emerging technologies.",
+   
+    desc: "To decode the barriers between students and high-level engineering. We strive to empower the IIITM community through peer-to-peer mentorship, open-source contribution, and hands-on workshops that turn abstract logic into real-world innovation.",
   },
   {
     title: "Our Vision",
-    desc: "Create an inclusive environment where students collaborate, innovate, and grow together as problem-solvers and developers.",
+   
+    desc: "To establish ABV-IIITM Gwalior as a global epicenter for technical excellence. We envision a future where every member of TES is equipped to solve 'Enigma-level' challenges, pushing the boundaries of what's possible in the digital landscape.",
   },
 ];

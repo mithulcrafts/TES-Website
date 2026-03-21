@@ -1,5 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Megaphone, Hourglass } from "lucide-react";
+import { Megaphone, ExternalLink, PenLine } from "lucide-react";
+
+/**
+ * REUSABLE DATA
+ * Update this object to change the content across the site.
+ */
+const ANNOUNCEMENT_CONTENT = {
+  badge: "Blogging Event",
+  title: "Tech Lekhan",
+  description: "An online tech blogging event to give your ideas a platform. Write an original blog on any tech topic and get a chance to be featured on our official Medium page. From code to AI, startups to cybersecurity—if it's tech, your voice matters.",
+  links: [
+    { label: "Register Here", url: "https://forms.gle/QkzT3Bcsaukr5Lib6", isPrimary: true },
+    { label: "Refer Rules", url: "https://robust-calcium-ce6.notion.site/...", isPrimary: false },
+    { label: "Official Medium", url: "https://medium.com/@tes.abviiitm", isPrimary: false },
+  ]
+};
 
 const Announcements = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -7,57 +22,78 @@ const Announcements = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
-      },
-      { threshold: 0.2 } // Triggers when 20% of the component is visible
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
+      { threshold: 0.1 }
     );
-
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div ref={sectionRef} className="w-full max-w-4xl mx-auto px-6 py-6 overflow-hidden">
-      
-      {/* Section Header */}
-      <div 
-        className={`flex items-center justify-center gap-3 mb-8 transition-all duration-1000 transform ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}
-      >
-        <Megaphone className="w-6 h-6 text-[var(--color-sapphire)]" />
-        <h2 className="text-3xl font-bold text-[var(--color-text-main)] tracking-tight">
+    <section 
+      ref={sectionRef} 
+      className="w-full max-w-5xl mx-auto px-6 py-24 font-sans"
+    >
+      {/* Header aligned with Geist Variable tracking */}
+      <div className={`flex items-center gap-4 mb-12 transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0 -translate-x-4'}`}>
+        <div className="w-8 h-[2px] bg-[var(--color-sapphire)]" />
+        <h2 className="text-3xl font-bold text-[var(--color-text-main)] tracking-tight flex items-center gap-3">
           Latest <span className="text-[var(--color-sapphire)]">Announcements</span>
+          <Megaphone className="w-6 h-6 text-[var(--color-sapphire)] opacity-40" />
         </h2>
       </div>
 
-      {/* "Coming Soon" Announcement Card */}
+      {/* Main Card: Uses --color-surface and --color-border from your theme */}
       <div 
-        className={`relative group overflow-hidden rounded-2xl border border-[color:rgba(255,255,255,0.08)] bg-[color:rgba(255,255,255,0.03)] backdrop-blur-2xl p-8 flex flex-col items-center text-center transition-all duration-1000 delay-300 transform ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-        } hover:border-[var(--color-sapphire)]/30 hover:shadow-[0_0_40px_rgba(116,199,236,0.1)]`}
+        className={`relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 md:p-10 transition-all duration-1000 transform ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        } hover:border-[var(--color-sapphire)]/40 hover:shadow-[0_0_50px_rgba(116,199,236,0.03)]`}
       >
-        
-        {/* Glowing Background Effect */}
-        <div className="absolute -top-24 -left-24 w-48 h-48 bg-[var(--color-sapphire)] opacity-5 blur-[80px] group-hover:opacity-15 transition-opacity duration-500" />
+        {/* Event Badge */}
+        <div className="mb-6 flex">
+          <span className="px-3 py-1 rounded-md bg-[var(--color-sapphire)]/10 text-[var(--color-sapphire)] text-[10px] font-bold uppercase tracking-[0.2em] border border-[var(--color-sapphire)]/20">
+            {ANNOUNCEMENT_CONTENT.badge}
+          </span>
+        </div>
 
-        
-        
+        <div className="space-y-6">
+          {/* Title with Teal Accent Icon */}
+          <h3 className="text-2xl md:text-4xl font-bold text-[var(--color-text-main)] flex items-center gap-3 tracking-tighter">
+            {ANNOUNCEMENT_CONTENT.title} 
+            <PenLine className="w-6 h-6 text-[var(--color-teal)] opacity-60" />
+          </h3>
+          
+          {/* Description: High visibility using Text-Main with adjusted opacity */}
+          {/* Description: Perfectly aligned and high visibility */}
+          <p className="text-[var(--color-text-main)] text-left text-sm  lg:text-lg leading-relaxed font-normal max-w-3xl opacity-85">
+            {ANNOUNCEMENT_CONTENT.description}
+          </p>
 
-        {/* Text Content */}
-        <h3 className="text-2xl font-semibold text-[var(--color-text-main)] mb-2 group-hover:text-[var(--color-sapphire)] transition-colors duration-300">
-          Coming Soon
-        </h3>
-        
+          {/* Links Grid */}
+          <div className="pt-8 flex flex-wrap gap-x-12 gap-y-4 border-t border-[var(--color-border)] mt-10">
+            {ANNOUNCEMENT_CONTENT.links.map((link, idx) => (
+              <a 
+                key={idx}
+                href={link.url}
+                target="_blank" 
+                rel="noreferrer"
+                className={`flex items-center gap-2 text-sm font-semibold transition-all group/link underline-offset-8 hover:underline ${
+                  link.isPrimary 
+                    ? 'text-[var(--color-sapphire)] hover:text-[var(--color-teal)]' 
+                    : 'text-[var(--color-text-muted)] hover:text-[var(--color-text-main)]'
+                }`}
+              >
+                {link.label} 
+                <ExternalLink className="w-4 h-4 opacity-40 group-hover/link:opacity-100 transition-opacity" />
+              </a>
+            ))}
+          </div>
+        </div>
 
-        
-        
-
-        {/* Decorative scan line animation */}
-        <div className="absolute inset-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color-sapphire)]/20 to-transparent -translate-y-full group-hover:animate-[scan_2s_linear_infinite]" />
+        {/* Ambient Glow matching Sapphire accent */}
+        <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-[var(--color-sapphire)] opacity-[0.03] blur-[100px] pointer-events-none" />
       </div>
-    </div>
+    </section>
   );
 };
 

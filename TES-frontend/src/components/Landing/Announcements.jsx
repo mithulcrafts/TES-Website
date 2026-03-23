@@ -11,7 +11,7 @@ const ANNOUNCEMENT_CONTENT = {
   description: "An online tech blogging event to give your ideas a platform. Write an original blog on any tech topic and get a chance to be featured on our official Medium page. From code to AI, startups to cybersecurity—if it's tech, your voice matters.",
   links: [
     { label: "Register Here", url: "https://forms.gle/QkzT3Bcsaukr5Lib6", isPrimary: true },
-    { label: "Refer Rules", url: "https://robust-calcium-ce6.notion.site/...", isPrimary: false },
+    { label: "Refer Rules", url: "https://robust-calcium-ce6.notion.site/Tech-Lekhan-2f53e328d0a4807481ffe287fcc92460", isPrimary: false },
     { label: "Official Medium", url: "https://medium.com/@tes.abviiitm", isPrimary: false },
   ]
 };

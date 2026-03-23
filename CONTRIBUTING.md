@@ -1,6 +1,6 @@
 # Contributing to TES Frontend
 
-First off — thank you for taking the time to contribute. TES is built by the community, for the community. You do not need a role or position to contribute. Everyone is welcome.
+First off, thanks for taking the time to contribute. TES is built by the community, for the community. You do not need any role or position to contribute. Anyone can get involved.
 
 ---
 
@@ -8,25 +8,20 @@ First off — thank you for taking the time to contribute. TES is built by the c
 
 > *"The idea is simple: learn from each other and grow together."*
 
-Contributions here follow the same principles TES stands for — no bias, radical transparency, and open feedback. Your skills matter, not your year or your background.
+This repo follows the same principles as TES. No bias, transparency, and open feedback. What matters is your work, not your year or background.
 
 ---
 
 ## Ways to Contribute
 
-You don't have to be a core member to make an impact. Here's how anyone can contribute:
+You do not need to be a core member to contribute. Here are some ways you can help:
 
-**Fix bugs** — Found something broken? Open an issue or submit a fix directly.
-
-**Improve UI/UX** — Have a better idea for a section? Propose it or build it.
-
-**Add content** — Articles, announcements, team members, events — help keep the site up to date.
-
-**Improve performance** — Optimize components, reduce bundle size, improve load times.
-
-**Write documentation** — Help others understand how the codebase works.
-
-**Report issues** — Even if you can't fix it, reporting a bug is a valuable contribution.
+* Fix bugs. If you find something broken, open an issue or submit a fix.
+* Improve UI or UX. If you have a better idea, suggest it or build it.
+* Add content. Help keep the site updated with articles, events, or announcements.
+* Improve performance. Optimize components and reduce load time.
+* Write documentation. Make it easier for others to understand the codebase.
+* Report issues. Even reporting a bug is useful.
 
 ---
 
@@ -44,122 +39,126 @@ cd tes-frontend
 # 4. Install dependencies
 npm install
 
-# 5. Create a new branch for your change
+# 5. Create a new branch
 git checkout -b feat/your-feature-name
 
-# 6. Make your changes, then commit
+# 6. Make changes and commit
 git add .
 git commit -m "feat: describe what you did"
 
 # 7. Push to your fork
 git push origin feat/your-feature-name
 
-# 8. Open a Pull Request on GitHub
+# 8. Open a Pull Request
 ```
 
 ---
 
 ## Branch Naming
 
-Use clear, consistent branch names:
+Use clear and simple names:
 
-| Type | Format | Example |
-|------|--------|---------|
-| New feature | `feat/name` | `feat/add-events-page` |
-| Bug fix | `fix/name` | `fix/footer-mobile-layout` |
-| UI improvement | `ui/name` | `ui/improve-hero-section` |
-| Documentation | `docs/name` | `docs/update-readme` |
-| Refactor | `refactor/name` | `refactor/background-component` |
+| Type      | Format          | Example                         |
+| --------- | --------------- | ------------------------------- |
+| Feature   | `feat/name`     | `feat/add-events-page`          |
+| Bug fix   | `fix/name`      | `fix/footer-mobile-layout`      |
+| UI change | `ui/name`       | `ui/improve-hero-section`       |
+| Docs      | `docs/name`     | `docs/update-readme`            |
+| Refactor  | `refactor/name` | `refactor/background-component` |
 
 ---
 
-## Commit Message Format
+## Commit Messages
 
-Follow this simple format:
+Keep it simple:
 
 ```
 type: short description
-
-Examples:
-feat: add newsletter section to footer
-fix: broken link in navigation
-ui: improve mobile responsiveness of team cards
-docs: add setup instructions to README
-refactor: clean up Background.jsx
 ```
 
-Keep commit messages short, lowercase, and in present tense.
+Examples:
+
+* feat: add newsletter section
+* fix: broken navigation link
+* ui: improve mobile layout
+* docs: update setup instructions
+* refactor: clean up Background.jsx
+
+Write in lowercase and present tense.
 
 ---
 
 ## Pull Request Rules
 
-Before submitting a PR, make sure:
+Before opening a PR:
 
-- Your code runs without errors (`npm run dev`)
-- You tested on both desktop and mobile
-- Your branch is up to date with `main`
-- Your PR has a clear title and description explaining what you changed and why
-- You haven't committed unnecessary files (`.env`, `node_modules`, etc.)
+* Make sure the project runs (`npm run dev`)
+* Test on desktop and mobile
+* Pull latest changes from `main`
+* Write a clear title and description
+* Do not include unnecessary files like `.env` or `node_modules`
 
-PRs are reviewed by core members. Feedback will be honest and constructive — that's the TES way.
+PRs will be reviewed by the team. Feedback will be direct and helpful.
 
 ---
 
-## Code Style Guidelines
+## Code Style
 
-- Use **functional React components** with hooks
-- Use **Tailwind CSS** for styling — avoid inline styles unless necessary
-- Keep components **small and focused** — one component, one job
-- Use **meaningful variable and function names**
-- Remove all `console.log` statements before submitting
-- Keep files clean — no commented-out dead code
+* Use functional React components with hooks
+* Use Tailwind CSS for styling
+* Keep components small and focused
+* Use clear variable and function names
+* Remove `console.log` before pushing
+* Avoid leaving unused or commented code
 
 ---
 
 ## Reporting Bugs
 
-Open a GitHub issue with:
+When opening an issue, include:
 
-1. A clear title describing the bug
-2. Steps to reproduce it
-3. What you expected vs what actually happened
-4. Screenshots if relevant
-5. Your browser and OS
+1. Clear title
+2. Steps to reproduce
+3. Expected vs actual result
+4. Screenshots if needed
+5. Browser and OS
 
 ---
 
 ## Content Contributions
 
-If you want to add or update content on the site (team members, articles, events, announcements):
+If you want to update content like team members, events, or articles:
 
-- Open a PR with the content changes
-- Make sure all information is accurate
-- For team member additions, include name, role, and optionally a profile photo
+* Open a PR with the changes
+* Make sure the information is correct
+* For team members, include name and role
 
-If you create high-quality articles or projects outside this repo, share them with the team — TES features good work on its official platforms with **full credit to the creator**.
+If you create something good outside this repo, share it. TES highlights good work and gives proper credit.
 
 ---
 
 ## Code of Conduct
 
-TES runs on three principles — and so does this repo:
+This repo follows the same three ideas:
 
-**No Bias** — Contributions are judged on quality, not on who you are or what year you're in.
+**No Bias**
+Work is judged on quality.
 
-**Radical Transparency** — Be open about what you're working on. If you're stuck, ask. If something is broken, say so.
+**Transparency**
+Be open about what you are doing.
 
-**Open Feedback** — Give feedback constructively. Receive feedback with an open mind. Criticism here is never personal — it's how we all get better.
+**Open Feedback**
+Give and receive feedback respectfully.
 
 ---
 
-## Questions?
+## Questions
 
-Reach out to us:
+Reach out anytime:
 
-- Email: **tes.abviiitm@gmail.com**
-- Instagram: [@TES_IIITM](https://www.instagram.com/tes_iiitm)
-- LinkedIn: [The Enigma Society](https://www.linkedin.com/company/tes-the-enigma-society/)
+* Email: [tes.abviiitm@gmail.com](mailto:tes.abviiitm@gmail.com)
+* Instagram: [@TES_IIITM](https://www.instagram.com/tes_iiitm)
+* LinkedIn: [The Enigma Society](https://www.linkedin.com/company/tes-the-enigma-society/)
 
 ---
 

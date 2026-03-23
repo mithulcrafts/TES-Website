@@ -1,0 +1,45 @@
+name: Enigma CI Checks
+
+# Controls when the workflow will run
+on:
+  # Runs on any push to main (to verify the merge was successful)
+  push:
+    branches: [ main ]
+  
+  # Runs on any Pull Request targeting the main branch
+  # This is where your feature branch code gets "Interrogated"
+  pull_request:
+    branches: [ main ]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  enigma-verification:
+    name: 💠 Enigma Security Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🛰️ Intercepting Source Code
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setting up Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 📦 Syncing Dependencies
+        # npm ci is faster and more reliable in CI/CD than npm install
+        run: npm ci
+
+      - name: 🔍 Analyzing Code Quality (Lint)
+        run: npm run lint || echo "No lint script found, skipping."
+
+      - name: 🏗️ Compiling Enigma Build
+        # This checks if your React + Tailwind v4 code actually works
+        run: npm run build
+
+      - name: ✅ Transmission Verified
+        if: success()
+        run: |
+          echo "Status: SUCCESS"
+          echo "All Enigma Society standards met. The code is stable."

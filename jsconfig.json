@@ -1,0 +1,11 @@
+{
+
+    "files" : [],
+    "refrences" : [],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}

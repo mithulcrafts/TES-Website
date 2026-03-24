@@ -9,6 +9,8 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+      base: '/TES-Website/',
+  
 
   resolve:{
     alias:{

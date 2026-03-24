@@ -54,7 +54,7 @@ You contribute because you want to, not because you have to. The club grows base
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-org/tes-frontend.git
+git clone https://github.com/your-username/tes-frontend.git
 
 # Move into the directory
 cd tes-frontend

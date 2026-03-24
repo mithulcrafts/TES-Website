@@ -7,7 +7,7 @@ const teamData = {
     { name: "Placeholder Lead 3", linkedin: "#", image: "" },
   ],
   team: [
-    { name: "Mithul Nama", linkedin: "https://www.linkedin.com/in/mithul-nama-61362a331", image:   "" },
+    { name: "Mithul Nama", linkedin: "https://www.linkedin.com/in/mithul-nama-61362a331", image:   ""/TES-Website/team/mithul.jpg" },
     { name: "Rohinth S", linkedin: "https://www.linkedin.com/in/srohinth/", image: "/TES-Website/team/rohinth.jpg"},
     { name: "Aman Dabral", linkedin: "https://www.linkedin.com/in/aman-dabral-163730323/", image: "" },
   ]

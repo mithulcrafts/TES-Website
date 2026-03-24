@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom"; // <-- Imported React Router Link
+import { Link } from "react-router-dom";
 
-// ── Inline styles customized to your palette ──────────────────────────────
+// ── Inline styles ────────────────────────────────────────────────────────────
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&display=swap');
 
@@ -69,8 +69,7 @@ const styles = `
   }
 `;
 
-// ── Star field ───────────────────────────────────────────────────────────────
-const STARS = Array.from({ length: 28 }, (_, i) => ({
+const STARS = Array.from({ length: 24 }, (_, i) => ({
   id: i,
   top: `${Math.random() * 100}%`,
   left: `${Math.random() * 100}%`,
@@ -81,7 +80,6 @@ const STARS = Array.from({ length: 28 }, (_, i) => ({
   maxOp: Math.random() * 0.4 + 0.2,
 }));
 
-// ── SVG Icons ────────────────────────────────────────────────────────────────
 const LinkedinIcon = () => (
   <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor">
     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -106,59 +104,49 @@ const socials = [
   { label: "Medium", icon: <MediumIcon />, href: "https://medium.com/@tes.abviiitm" },
 ];
 
-// ── Updated Nav Links ─────────────────────────────────────────────────────────
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Articles", path: "/articles" }
 ];
 
-// ── Intersection observer hook ───────────────────────────────────────────────
 function useFadeUp(delay = 0) {
   const ref = useRef(null);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const timer = setTimeout(() => {
-      const obs = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) { el.classList.add("visible"); obs.disconnect(); } },
-        { threshold: 0.1 }
-      );
-      obs.observe(el);
-      return () => obs.disconnect();
-    }, delay);
-    return () => clearTimeout(timer);
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { el.classList.add("visible"); obs.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
   }, [delay]);
   return ref;
 }
 
-// ── Column header ────────────────────────────────────────────────────────────
 function ColHeader({ children }) {
   return (
     <div className="flex items-center gap-3 mb-6">
+      <div className="flex-1 h-px bg-[var(--color-sapphire)] opacity-20 block sm:hidden" />
       <span className="mono text-[10px] tracking-[3px] uppercase text-[var(--color-sapphire)]">{children}</span>
       <div className="flex-1 h-px bg-[var(--color-sapphire)] opacity-20" />
     </div>
   );
 }
 
-// ── Main footer component ────────────────────────────────────────────────────
 export default function EnigmaFooter() {
-  const col1Ref = useFadeUp(100);
-  const col2Ref = useFadeUp(200);
-  const col3Ref = useFadeUp(300);
-  const col4Ref = useFadeUp(400);
-  const bottomRef = useFadeUp(500);
+  const col1Ref = useFadeUp(0);
+  const col2Ref = useFadeUp(100);
+  const col3Ref = useFadeUp(200);
+  const col4Ref = useFadeUp(300);
+  const bottomRef = useFadeUp(400);
 
   return (
     <>
       <style>{styles}</style>
 
-      {/* Removed Top glow line */}
-
-      <footer
-        className="footer-font relative overflow-hidden bg-base border-t border-[var(--color-surface)]"
-      >
+      <footer className="footer-font relative overflow-hidden bg-base border-t border-[var(--color-surface)]">
         {/* Starfield */}
         {STARS.map((s) => (
           <span
@@ -173,28 +161,18 @@ export default function EnigmaFooter() {
           />
         ))}
 
-        {/* Removed Ambient glow bottom-center */}
-
-        {/* Subtle grid lines */}
-        <div className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: "linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
-          }}
-        />
-
-        <div className="relative z-10 max-w-6xl mx-auto px-8 pt-16 pb-8">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 pt-12 sm:pt-16 pb-8">
 
           {/* ── Grid ── */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-surface">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-surface">
 
-            {/* Brand */}
-            <div ref={col1Ref} className="fade-up lg:col-span-1">
-              <div className="mb-6 flex items-center">
+            {/* Brand - Center Align Mobile */}
+            <div ref={col1Ref} className="fade-up flex flex-col items-center sm:items-start text-center sm:text-left">
+              <div className="mb-6">
                 <img 
                   src="/TES-Website/teslogo-nobg-text-white.png" 
                   alt="TES Logo" 
-                  className="w-48 opacity-90 hover:opacity-100 transition-opacity" 
+                  className="w-48 opacity-90 transition-opacity" 
                 />
               </div>
 
@@ -210,22 +188,21 @@ export default function EnigmaFooter() {
                   color: "var(--color-sapphire)" 
                 }}
               >
-                <span>◆</span>
-                ABV-IIITM Gwalior
+                <span>◆</span> ABV-IIITM Gwalior
               </div>
             </div>
 
-            {/* Quick Links */}
-            <div ref={col2Ref} className="fade-up">
+            {/* Navigate - Center Align Mobile */}
+            <div ref={col2Ref} className="fade-up text-center sm:text-left">
               <ColHeader>Navigate</ColHeader>
-              <ul className="space-y-3">
+              <ul className="space-y-3 flex flex-col items-center sm:items-start">
                 {navLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       to={link.path}
-                      className="nav-link flex items-center gap-3 text-sm font-medium text-[var(--color-text-muted)] w-max"
+                      className="nav-link flex items-center gap-3 text-sm font-medium text-[var(--color-text-muted)]"
                     >
-                      <span className="mono text-[10px] text-[var(--color-sapphire)] opacity-50">—</span>
+                      <span className="mono text-[10px] text-[var(--color-sapphire)] opacity-50 hidden sm:inline">—</span>
                       {link.name}
                     </Link>
                   </li>
@@ -233,17 +210,17 @@ export default function EnigmaFooter() {
               </ul>
             </div>
 
-            {/* Socials */}
-            <div ref={col3Ref} className="fade-up">
+            {/* Socials - Center & Full Width Mobile */}
+            <div ref={col3Ref} className="fade-up text-center sm:text-left">
               <ColHeader>Socials</ColHeader>
-              <div className="space-y-2">
+              <div className="flex flex-col items-center sm:items-start space-y-2">
                 {socials.map(({ label, icon, href }) => (
                   <a
                     key={label}
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="social-row flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-[var(--color-text-muted)] no-underline w-max"
+                    className="social-row flex items-center justify-center sm:justify-start gap-3 px-4 py-2.5 rounded-lg text-sm font-medium text-[var(--color-text-muted)] no-underline w-[70%] sm:w-full"
                     style={{ background: "color-mix(in srgb, var(--color-surface) 50%, transparent)" }}
                   >
                     <div
@@ -252,21 +229,21 @@ export default function EnigmaFooter() {
                     >
                       {icon}
                     </div>
-                    {label}
+                    <span>{label}</span>
                   </a>
                 ))}
               </div>
             </div>
 
-            {/* Contact */}
-            <div ref={col4Ref} className="fade-up">
+            {/* Contact - Center Align Mobile */}
+            <div ref={col4Ref} className="fade-up text-center sm:text-left">
               <ColHeader>Contact</ColHeader>
               <div className="space-y-6">
                 <div>
                   <p className="mono text-[9px] tracking-[2px] uppercase mb-1 text-[var(--color-sapphire)] opacity-80">Email</p>
                   <a
                     href="mailto:tes.abviiitm@gmail.com"
-                    className="text-[13px] font-medium text-[var(--color-text-muted)] no-underline transition-colors hover:text-[var(--color-sapphire)]"
+                    className="text-[13px] font-medium text-[var(--color-text-muted)] no-underline transition-colors hover:text-[var(--color-sapphire)] break-all"
                   >
                     tes.abviiitm@gmail.com
                   </a>
@@ -280,18 +257,17 @@ export default function EnigmaFooter() {
           </div>
 
           {/* ── Bottom bar ── */}
-          <div ref={bottomRef} className="fade-up flex flex-wrap items-center justify-between gap-4 pt-7">
-            <p className="mono text-[11px] tracking-wide text-[var(--color-text-muted)]">
+          <div ref={bottomRef} className="fade-up flex flex-col items-center justify-center lg:flex-row lg:justify-between gap-6 pt-7 text-center lg:text-left">
+            <p className="mono text-[11px] tracking-wide text-[var(--color-text-muted)] order-3 lg:order-1">
               © 2026 <span className="text-[var(--color-sapphire)]">Enigma Society</span>. All rights reserved.
             </p>
 
-            <div className="flex items-center gap-2 mono text-[10px] tracking-widest text-[var(--color-text-muted)] opacity-60">
-              {/* Replaced pulsing dot with a clean static dot */}
+            <div className="flex items-center justify-center gap-2 mono text-[10px] tracking-widest text-[var(--color-text-muted)] opacity-60 order-1 lg:order-2">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--color-sapphire)] opacity-80" />
               ACTIVE · ABV-IIITM GWALIOR
             </div>
 
-            <p className="mono text-[10px] tracking-widest text-[var(--color-text-muted)] opacity-60">
+            <p className="mono text-[10px] tracking-widest text-[var(--color-text-muted)] opacity-60 order-2 lg:order-3">
               BUILT BY ENIGMA SOCIETY
             </p>
           </div>

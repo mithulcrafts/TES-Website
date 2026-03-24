@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TextType from '../TextType';
 import Tilt from 'react-parallax-tilt';
-import CountUp from './CountUp';
+
 
 // Moved outside the component so it doesn't re-create on every single render
 const logoColors = [

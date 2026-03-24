@@ -192,7 +192,7 @@ export default function EnigmaFooter() {
             <div ref={col1Ref} className="fade-up lg:col-span-1">
               <div className="mb-6 flex items-center">
                 <img 
-                  src="public/teslogo-nobg-text-white.png" 
+                  src="/TES-Website/teslogo-nobg-text-white.png" 
                   alt="TES Logo" 
                   className="w-48 opacity-90 hover:opacity-100 transition-opacity" 
                 />

@@ -30,24 +30,30 @@ const Announcements = () => {
   }, []);
 
   return (
-    <section 
-      ref={sectionRef} 
+    <section
+      ref={sectionRef}
       className="w-full max-w-5xl mx-auto px-6 py-24 font-sans"
     >
       {/* Header aligned with Geist Variable tracking */}
-      <div className={`flex items-center gap-4 mb-12 transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0 -translate-x-4'}`}>
-        <div className="w-8 h-[2px] bg-[var(--color-sapphire)]" />
-        <h2 className="text-3xl font-bold text-[var(--color-text-main)] tracking-tight flex items-center gap-3">
-          Latest <span className="text-[var(--color-sapphire)]">Announcements</span>
-          <Megaphone className="w-6 h-6 text-[var(--color-sapphire)] opacity-40" />
+      <div className={`flex flex-col sm:flex-row items-center gap-4 mb-10 sm:mb-12 transition-all duration-700 ${isVisible ? 'opacity-100' : 'opacity-0 sm:-translate-x-4 translate-y-4'}`}>
+        {/* The Sapphire Line: hidden on mobile or centered above/below text */}
+        <div className="hidden sm:block w-8 h-[2px] bg-[var(--color-sapphire)]" />
+
+        <h2 className="text-2xl sm:text-3xl font-bold text-[var(--color-text-main)] tracking-tight flex items-center justify-center sm:justify-start gap-3 text-center sm:text-left">
+          <span>
+            Latest <span className="text-[var(--color-sapphire)]">Announcements</span>
+          </span>
+          <Megaphone className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--color-sapphire)] opacity-40 flex-shrink-0" />
         </h2>
+
+        {/* Optional: Mobile-only sapphire line under the text for balance */}
+        <div className="sm:hidden w-12 h-[2px] bg-[var(--color-sapphire)] opacity-30 mt-1" />
       </div>
 
       {/* Main Card: Uses --color-surface and --color-border from your theme */}
-      <div 
-        className={`relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 md:p-10 transition-all duration-1000 transform ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        } hover:border-[var(--color-sapphire)]/40 hover:shadow-[0_0_50px_rgba(116,199,236,0.03)]`}
+      <div
+        className={`relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 md:p-10 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          } hover:border-[var(--color-sapphire)]/40 hover:shadow-[0_0_50px_rgba(116,199,236,0.03)]`}
       >
         {/* Event Badge */}
         <div className="mb-6 flex">
@@ -59,10 +65,10 @@ const Announcements = () => {
         <div className="space-y-6">
           {/* Title with Teal Accent Icon */}
           <h3 className="text-2xl md:text-4xl font-bold text-[var(--color-text-main)] flex items-center gap-3 tracking-tighter">
-            {ANNOUNCEMENT_CONTENT.title} 
+            {ANNOUNCEMENT_CONTENT.title}
             <PenLine className="w-6 h-6 text-[var(--color-teal)] opacity-60" />
           </h3>
-          
+
           {/* Description: High visibility using Text-Main with adjusted opacity */}
           {/* Description: Perfectly aligned and high visibility */}
           <p className="text-[var(--color-text-main)] text-left text-sm  lg:text-lg leading-relaxed font-normal max-w-3xl opacity-85">
@@ -72,18 +78,17 @@ const Announcements = () => {
           {/* Links Grid */}
           <div className="pt-8 flex flex-wrap gap-x-12 gap-y-4 border-t border-[var(--color-border)] mt-10">
             {ANNOUNCEMENT_CONTENT.links.map((link, idx) => (
-              <a 
+              <a
                 key={idx}
                 href={link.url}
-                target="_blank" 
+                target="_blank"
                 rel="noreferrer"
-                className={`flex items-center gap-2 text-sm font-semibold transition-all group/link underline-offset-8 hover:underline ${
-                  link.isPrimary 
-                    ? 'text-[var(--color-sapphire)] hover:text-[var(--color-teal)]' 
+                className={`flex items-center gap-2 text-sm font-semibold transition-all group/link underline-offset-8 hover:underline ${link.isPrimary
+                    ? 'text-[var(--color-sapphire)] hover:text-[var(--color-teal)]'
                     : 'text-[var(--color-text-muted)] hover:text-[var(--color-text-main)]'
-                }`}
+                  }`}
               >
-                {link.label} 
+                {link.label}
                 <ExternalLink className="w-4 h-4 opacity-40 group-hover/link:opacity-100 transition-opacity" />
               </a>
             ))}

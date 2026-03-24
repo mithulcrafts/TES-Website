@@ -7,8 +7,8 @@ const teamData = {
     { name: "Placeholder Lead 3", linkedin: "#", image: "" },
   ],
   team: [
-    { name: "Mithul Nama", linkedin: "https://www.linkedin.com/in/mithul-nama-61362a331", image: "/team/mithul.jpg" },
-    { name: "Rohinth S", linkedin: "https://www.linkedin.com/in/srohinth/", image: "/team/rohinth.jpg" },
+    { name: "Mithul Nama", linkedin: "https://www.linkedin.com/in/mithul-nama-61362a331", image: mithul.jpg" },
+    { name: "Rohinth S", linkedin: "https://www.linkedin.com/in/srohinth/", image: rohinth.jpg" },
     { name: "Aman Dabral", linkedin: "https://www.linkedin.com/in/aman-dabral-163730323/", image: "" },
   ]
 };

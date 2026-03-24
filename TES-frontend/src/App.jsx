@@ -6,17 +6,13 @@ import About from "./pages/About";
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/TES-Website/">
       <Routes>
         {/* Everything inside this route uses the Layout wrapper (Header + Styling) */}
         <Route element={<Layout />}>
-          
-          <Route path="/" element={<Landing />} />
-          
+          <Route index element={<Landing />} />
           <Route path="/about" element={<About />} />
-          
           <Route path="/articles" element={<Articles />} />
-          
         </Route>
       </Routes>
     </Router>

@@ -3,8 +3,7 @@ import React from 'react';
 const teamData = {
   coordinators: [
     { name: "Dr. Rahul Kala", linkedin: "https://www.linkedin.com/in/rkala001/", image: "/TES-Website/team/Dr.RahulKala.jpeg" },
-    { name: "Placeholder Lead 2", linkedin: "#", image: "" },
-    { name: "Placeholder Lead 3", linkedin: "#", image: "" },
+    
   ],
   team: [
     { name: "Mithul Nama", linkedin: "https://www.linkedin.com/in/mithul-nama-61362a331", image:   "/TES-Website/team/mithul.jpg" },
@@ -62,11 +61,11 @@ const Team = () => {
       </div>
 
       {/* Lead Coordinators Section */}
-      <div className="space-y-6 pt-6">
+      <div className="space-y-6 pt-6 justify-center flex flex-col items-center rounded-2xl">
         <h3 className="text-[var(--color-lavender)] text-2xl md:text-3xl font-bold tracking-tight text-center">
           Coordinators
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="flex flex-row gap-6 w-full items-center justify-center ">
           {teamData.coordinators?.map((lead, index) => (
             <a 
               key={index} 
@@ -76,7 +75,7 @@ const Team = () => {
               /* ADDED items-center and removed block */
               className="group bg-[var(--color-surface)] border border-white/5 p-6 rounded-2xl hover:border-[var(--color-sapphire)]/50 transition-all flex flex-col items-center cursor-pointer"
             >
-              <div className="w-28 h-28 shrink-0 bg-white/5 mb-6 flex items-center justify-center overflow-hidden relative rounded-full border border-white/5 group-hover:border-[var(--color-sapphire)]/30 transition-colors">
+              <div className="w-30 h-28 shrink-0 bg-white/5 mb-6 flex items-center justify-center overflow-hidden relative rounded-full border border-white/5 group-hover:border-[var(--color-sapphire)]/30 transition-colors">
                 {lead.image ? (
                   <img src={lead.image} alt={lead.name} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
                 ) : (
@@ -88,7 +87,7 @@ const Team = () => {
               
               <p className="text-[var(--color-text-main)] text-xl font-semibold transition-colors group-hover:text-[var(--color-sapphire)] text-center">{lead.name}</p>
               
-              <div className="mt-auto pt-5 border-t border-white/5 w-full">
+              <div className="mt-auto pt-5 border-t border-white/5 w-55">
                 <span className="text-sm font-bold text-[var(--color-text-muted)] group-hover:text-[var(--color-lavender)] transition-colors flex items-center justify-center gap-2">
                   View Profile <span>→</span>
                 </span>

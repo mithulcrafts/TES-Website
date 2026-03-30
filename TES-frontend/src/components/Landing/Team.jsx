@@ -3,6 +3,7 @@ import React from 'react';
 const teamData = {
   coordinators: [
     { name: "Dr. Rahul Kala", linkedin: "https://www.linkedin.com/in/rkala001/", image: "/TES-Website/team/Dr.RahulKala.jpeg" },
+    { name: "Dr. Rohit Kumar", linkedin: "https://www.linkedin.com/in/dr-rohit-kumar-smieee/", image: "/TES-Website/team/Dr.RohitKumar.png" }
     
   ],
   team: [

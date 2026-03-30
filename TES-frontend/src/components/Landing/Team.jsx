@@ -66,7 +66,7 @@ const Team = () => {
         <h3 className="text-[var(--color-lavender)] text-2xl md:text-3xl font-bold tracking-tight text-center">
           Coordinators
         </h3>
-        <div className="flex flex-row gap-6 w-full items-center justify-center ">
+        <div className="flex flex-col sm:flex-row gap-6 w-full items-center justify-center ">
           {teamData.coordinators?.map((lead, index) => (
             <a 
               key={index} 
